@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+        *{margin : 0;
+        padding :0;
+        }
+        @font-face {
+            font-family: 'ujwal';
+            src: url(./PermanentMarker-Regular.ttf);
+        }
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #child{
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            font-family: "ujwal";
+            /* background-color:powderblue; */
+            text-transform: capitalize;
+            /* line-height: 400px; */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color:tan;
+        }
+        @media (max-width:576px){
+            #child{
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+    <script src="../js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main">
+        <div id="child">
+            <!-- Lorem ipsum dolor sit amet.
+            <form  id="f">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="n1" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="n2" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <select name="" id="scountry" class="custom-select">
+                        <option value="india">india</option>
+                        <option value="india">india</option>
+                        <option value="india">india</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-block btn-group-lg btn-success">
+                </div>
+            </form> -->
+            <!-- 28 april 2006 -->
+            <h1>time left</h1>
+            <div class="s">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            
+            var bd = new Date('2021 july 08,10:30:00');
+            var n = bd.getTime();
+            var tt = new Date();
+            var n1 = tt.getTime();
+            var day =bd-tt;
+            // console.log(day);
+            var dl= console.log(Math.floor(day/(86400*1000)));
+            var hr = console.log(Math.floor((day%(86400*1000)/(1000*60*60))));
+            var gothour=console.log(Math.floor((day%(1000*86400)/(60*60*1000))));;
+        });
+    </script>
+</body>
+</html>

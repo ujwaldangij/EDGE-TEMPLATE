@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    border: 3px solid darkgoldenrod;
+}
+.row{
+    border: 3px solid red;
+}
+.col{
+    border: 3px solid blue;
+    /* background-color: red; */
+}
+.col1{
+    border: 3px solid blue;
+    background-color: blue;
+}
+
+#head1{
+    background-image: url(../img/mountains-190055_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: blue;
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-family: 'Dela Gothic One', cursive;
+    /* background-attachment: fixed; */
+    position: relative;
+}
+#head1::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: rgb(238, 230, 255,0.6);
+    bottom: 0;
+    height: 100%;
+
+}
+.k{
+    height: 400px;
+}
+.col-md-12 ul{
+    padding: 0;
+    margin: 0;
+}
+.col-md-12 ul li{
+    display: inline-block;
+    padding: 10px ;
+    background-color: blueviolet;
+    /* margin: ; */
+}
+.col-md-12 ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+td,th{
+    border: 2px solid black;
+}
+td{
+    padding: 10px;
+}
+.red{
+    background-color: red;
+    color: white;
+}
+.pink{
+    background-color: pink;
+}
+.powderblue{
+    background-color:powderblue;
+}
+.orange{
+    background-color: orange;
+}
+.black{
+    background-color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

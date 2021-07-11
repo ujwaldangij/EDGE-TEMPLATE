@@ -1,0 +1,89 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class car {
+            constructor() {
+                let m;
+                console.log('yes m');
+            }
+            info() {
+                console.log('value ' + this.m);
+            }
+
+        }
+        let c = new car();
+        c.m = "sns";
+        c.info();
+        class phone {
+            constructor(mobail, email, gfno) {
+                this.mobail=mobail;
+                this.email=email;
+                this.gfno=gfno;
+                // console.log(this.mobail);
+            }
+            device(){
+                console.log(this.mobail+'p');
+            }
+            static device1(king){
+                console.log(king+'p');
+            }
+            
+        }
+        class laptop extends phone{
+            device(){
+                super.device();
+                console.log(this.mobail+'c');
+                // super.device1();
+            }
+        }
+        let p = new laptop('vivo','abc@gmail.com','56789762');
+        p.device();
+        phone.device1('king');
+   </script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class employee{
+            constructor(name,age,salery){
+                this.name = name;
+                this.age = age;
+                this.salery =salery;
+            }
+            data(){
+                document.write(`<h1> employ data </h1><br>${this.name} and salery is ${this.salery} `);
+            }
+        }
+        class manager extends employee{
+            data(){
+                let hlone=2000;
+                let travaling=1000;
+                let total=this.age+hlone+travaling;
+                document.write(`<h1> employ data </h1><br>${this.name} and salery is ${total} `);
+            }
+        }
+        let m = new manager('ujwal',20,20000);
+        m.data();
+        let e = new employee('ujwal',20222,20000);
+        e.data();
+    </script>
+</body>
+</html>

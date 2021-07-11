@@ -1,0 +1,1 @@
+export let randomSquare= "ujwal is great";

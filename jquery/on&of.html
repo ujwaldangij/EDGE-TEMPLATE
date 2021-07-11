@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="../js/jquery.js"></script>
+    <style>
+        .main,
+        .main1 {
+            width: 500px;
+            height: 500px;
+            background-color: tan;
+            text-align: center;
+            box-shadow: 4px 5px 4px black;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: aqua;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: xx-large;
+            text-shadow: 3px 3px 2px rebeccapurple;
+        }
+
+        .main1 {
+            background-color: aquamarine;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h2>Lorem, ipsum dolor.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, iste.</p>
+    </div>
+    <div class="main1">
+        <!-- <h2>Lorem, ipsum dolor.</h2> -->
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, fugiat.</p> -->
+    </div>
+</body>
+<script>
+
+</script>
+<script>
+    $(document).ready(function () {
+        $(".main").on(" mouseout click", function () {
+            // $(".main").clone().append(".main1");
+            // $(".main").mouseenter(function () {
+                // $(".main").css("background-color", "pink");
+            // });
+            $(".main").empty();
+             
+        });
+    });
+</script>
+
+</html>

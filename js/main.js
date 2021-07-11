@@ -1,0 +1,1 @@
+import randomSquare from './t1.js';

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'ujwal';
+            src: url(./PermanentMarker-Regular.ttf);
+        }
+
+        #main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #child {
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            font-family: "ujwal";
+            /* background-color:powderblue; */
+            text-transform: capitalize;
+            /* line-height: 400px; */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: tan;
+            background-image: linear-gradient(to right bottom, #42275a, #734b6d);
+            box-shadow: 6px 6px 4px black, 12px 12px 8px pink;
+        }
+    </style>
+    <script src="../js/jquery.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="child">
+            <ol ></ol>
+        </div>
+    </div>
+    <div id="sm">
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            // $("#child").on("mouseleave mousemove ", function () {
+            //     $(this).css("background-image", "linear-gradient(to right bottom, #eecda3 50% , #ef629f 50%)");
+            // });
+            $(document).click(function () {
+
+            });
+            $("#child").on({
+                // "mouseenter": function () {
+                //     $(this).css("background-image",
+                //         "linear-gradient(to right bottom, #eecda3 50% , #ef629f 50%)");
+                //     $(this).append("<li type='1'>done </li>");
+                //     $(this).prepend("<li type='1'>done </li>");
+                //     $("#child li").clone().prependTo("#sm");
+                    
+                // },
+                "click": function () {
+                    // $(this).css("background-image",
+                        // "linear-gradient(to right bottom, #eecda3  , #ef629f )");
+                    $("#child ol").text("monty");
+                    $("#child ol").wrapInner("<h2></h2>");
+                    // $("child ").unwrap();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestingFormValidation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- !stype for csss -->
+    <style>
+        .main {
+            width: 100vw;
+            height: 100vh;
+            background-image: url(./img/cadaques-838724_1920.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            font-family: 'Prompt', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .col-md-6 {
+            background-image: linear-gradient(to right bottom, rgb(204, 43, 94, 0.5) 50%, rgb(117, 58, 136, 0.5) 50%);
+            box-shadow: 7px 7px 8px black;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .form-group {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-group label {
+            transition: transform 2s ease-in-out;
+        }
+
+        .form-group input:focus>label {
+            transform: scale(2);
+        }
+
+        h2 {
+            font-weight: bold;
+            color: #121212;
+            padding: 10px;
+            font-size: 3rem;
+            text-shadow: -1px 1px 0 #41ba45,
+                1px 1px 0 #c63d2b,
+                1px -1px 0 #42afac,
+                -1px -1px 0 #c6c23f;
+
+        }
+
+        @media screen and (max-width: 564px) {
+            .form-group h2 {
+                font-size: 1.6rem;
+            }
+
+        }
+
+        .form-group i {
+            position: absolute;
+            top: 40px;
+            right: 18px;
+            font-size: 1.5rem;
+            visibility: hidden;
+        }
+
+        .form-group i.fa-thumbs-up {
+            color: rgb(0, 255, 0);
+        }
+
+        .form-group i.fa-exclamation-triangle {
+            color: rgb(255, 0, 0);
+        }
+
+        .form-group.success i.fa-thumbs-up {
+            color: rgb(0, 255, 0);
+            visibility: visible;
+        }
+
+        .form-group.error i.fa-exclamation-triangle {
+            color: rgb(255, 0, 0);
+            visibility: visible;
+        }
+
+        .form-group.error input {
+            color: rgb(255, 0, 0);
+            border-color: rgb(255, 0, 0);
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25);
+        }
+
+        .form-group.success input {
+            color: rgb(0, 255, 0);
+            border-color: rgb(0, 255, 0);
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(0, 255, 0, 0.25);
+        }
+
+        .form-group.error span {
+            color: rgb(255, 0, 0);
+        }
+
+        .form-group.success span {
+            color: rgb(0, 255, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main" id="">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                    <form id="form">
+                        <h2 class="text-uppercase text-center">registration-form</h2>
+                        <div class="form-group">
+                            <label for="Name" class="">Name</label>
+                            <input type="text" id="name" placeholder="Enter your name**!" autocomplete="off"
+                                class="form-control">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <i class="far fa-thumbs-up"></i>
+                            <span class=" text-capitalize" id="">u</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password" class="">Password</label>
+                            <input type="password" id="password" placeholder="Enter your Password**!" autocomplete="off"
+                                class="form-control">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <i class="far fa-thumbs-up"></i>
+                            <span class=" text-capitalize" id="">u</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cPassword" class="">Confirm Password</label>
+                            <input type="password" id="cpassword" placeholder="Enter your Confirm Password**!"
+                                autocomplete="off" class="form-control">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <i class="far fa-thumbs-up"></i>
+                            <span class=" text-capitalize" id="">u</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="">email</label>
+                            <input type="text" id="email" placeholder="Enter your email**!" autocomplete="off"
+                                class="form-control">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <i class="far fa-thumbs-up"></i>
+                            <span class=" text-capitalize" id="">u</span>
+                        </div>
+                        <input type="submit" class="btn btn-block btn-success " value="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('form');
+        const name = document.getElementById('name');
+        const password = document.getElementById('password');
+        const cpassword = document.getElementById('cpassword');
+        const email = document.getElementById('email');
+        // gett value
+
+        form.addEventListener("submit", prevent = (event) => {
+            event.preventDefault();
+            validate();
+        });
+
+        function setError(input, msg) {
+            const p = input.parentElement;
+            const inner = p.querySelector('span');
+            p.className = "form-group error";
+            inner.innerText = msg;
+        }
+
+        function setSuccess(input, msg) {
+            const p = input.parentElement;
+            const span = p.querySelector('span');
+            p.className = "form-group success";
+            span.innerText = msg;
+        }
+
+        function validate() {
+            const valname = name.value.trim();
+            const valpassword = password.value.trim();
+            const valcpassword = cpassword.value.trim();
+            const valemail = email.value.trim();
+            // name valid
+            if (valname == "") {
+                setError(name, 'user name cant be empty');
+            } else if (!isNaN(valname)) {
+                setError(name, 'user name cant be no');
+            } else if (valname.length <= 2) {
+                setError(name, 'user name cant be less then 2');
+            } else {
+                setSuccess(name, 'perfect name');
+            }
+            // password
+            if (valpassword == "") {
+                setError(password, 'user password cant be empty');
+            } else if (valpassword.length <= 2) {
+                setError(password, 'user password cant be less then 2');
+            } else {
+                setSuccess(password, 'perfect password');
+            }
+            // confirm password
+            if (valcpassword == "") {
+                setError(cpassword, 'user cpassword cant be empty');
+            } else if (valcpassword.length <= 2) {
+                setError(cpassword, 'user cpassword cant be less then 2');
+            } else if (valcpassword != valpassword) {
+                setError(cpassword, 'user password not match');
+            } else {
+                setSuccess(cpassword, 'perfect cpassword');
+            }
+            // email
+            if (valemail == "") {
+                setError(email, 'user email cant be empty');
+            } else if (valemail.length <= 2) {
+                setError(email, 'user email cant be less then 2');
+            } else if (emaila() == false) {
+                setError(email, 'user email not valid')
+            } else {
+                setSuccess(email, 'perfect email');
+            }
+            setServer();
+        }
+
+        function setServer() {
+            let classname = document.getElementsByClassName('form-group');
+            var total = classname.length - 1;
+            console.log(total);
+            for (i = 0; i < classname.length; i++) {
+                if (classname[i].className == "form-group success") {
+                    var count = 0 + i;
+                    send(total, count);
+                    // console.log(count);
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        // function setServer(valname) {
+        //     let m = document.getElementsByClassName('form-group');
+        //     var count = m.length - 1;
+        //     // srate=0;
+        //     for (i = 0; i < m.length; i++) {
+        //         if (m[i].className == "form-group success") {
+        //             var srate = 0 + i;
+        //             send(srate, count, valname);
+        //         } else {
+        //             return false;
+        //         }
+        //     }
+        // }
+
+        // function send(srate, count, valname) {
+        //     if (srate === count) {
+        //         alert('registration successfull');
+        //         swal("Good job!" + valname, "Registration successfull!", "success");
+        //         location.href = `ujwal.html`;
+        //     }
+        // }
+
+        function send(count, total) {
+            if (total == count) {
+                // alert("done");
+                swal("Registration Successful!", "record submit!", "success");
+                // location.href = "./card.html";
+            }
+        }
+
+        function emaila() {
+            const valemail = email.value.trim();
+            // ujwal@gmail.com
+            let atp = valemail.indexOf('@');
+            let dot = valemail.lastIndexOf('.');
+            // console.log(atp, dot);
+            if (atp < 1) {
+                return false;
+            } else if (dot <= atp + 3) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>
