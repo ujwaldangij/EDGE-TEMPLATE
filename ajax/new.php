@@ -1,7 +1,3 @@
-<?php
-echo "ujwal is great";
-echo "dangi"; 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,13 +9,14 @@ echo "dangi";
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="../js/jquery.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
     <div id="head">
-        <div class="container">
-            
-            <div class="row">
+        <div class="container overflow-hidden">
+
+            <div class="row ">
                 <!-- <iframe
                     src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F100007360361889%2Fvideos%2F947264512484616%2F&show_text=false&width=267&t=0"
                     width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
@@ -30,8 +27,12 @@ echo "dangi";
                 <div class="col-md-12">
                     <h1 class="text-center bg-secondary my-0 text-light text-capitalize">php with ajax</h1>
                 </div>
-                <div class="col-md-12 px-0 bg-info">
-                    <button class="btn my-2 btn-secondary d-flex mx-auto n">load data</button>
+                <div class="col-md-12 bg-primary">
+                    <form action="" id="add">
+                        <input type="text" id="name" class="form-control form-control-sm">
+                        <input type="submit" class="btn my-2 btn-secondary d-flex mx-auto n" value="data">
+
+                    </form>
                 </div>
                 <div class="col-md-12 ">
                     <div class="table-responsive">
@@ -55,21 +56,59 @@ echo "dangi";
         </div>
 
     </div>
-    <script>
-    $(document).ready(function() {
-        $(".n").click(function() {
+</body>
+
+<script>
+$(document).ready(function() {
+    $(".n").click(function(e) {
+        e.preventDefault();
+
+        function load() {
             $.ajax({
                 type: "POST",
-                url: "./ujwal.php",
-                // data: "data",
-                // dataType: "dataType",
-                success: function(data) {
-                    $("#m").html(data);
+                url: "ujwal.php",
+                success: function(response) {
+                    $("#m").html(response);
                 }
             });
-        });
+        }
+        load();
+        // die();
+        var name = $("#name").val();
+        console.log(name);
+        function data() {
+            var name = $("#name").val();
+            $.ajax({
+                type: "POST",
+                url: "insert.php",
+                data: {first:name},
+                success: function(response) {
+                    load();
+                    swal({
+  title: "Good job!",
+  text: "You clicked the button!",
+  icon: "success",
+  button: "Aww yiss!",
+
+});
+
+
+                    $("#add").trigger("reset");         
+                }
+            });
+        }
+        function setError(){
+            $("#name").css("background-color", "red");
+        }
+        console.log(name);
+        if (name == "") {
+            setError();
+        } else {
+            data();
+        }
+
     });
-    </script>
-</body>
+});
+</script>
 
 </html>
