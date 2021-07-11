@@ -26,7 +26,7 @@
                         <table class="table table-bordered table-striped table-hover">
                             <thead class=" text-uppercase thead-dark">
                                 <tr>
-                                    <th>iiih</th>
+                                    <th>i love u h</th>
                                     <th>name</th>
                                 </tr>
                             </thead>
