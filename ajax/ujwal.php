@@ -13,7 +13,11 @@ if (mysqli_num_rows($r) > 0) {
     # code...
     while ($row = mysqli_fetch_assoc($r)) {
         # code...
-        echo $out="<tr><td>{$row['id']}</td><td>{$row['name']}</td></tr>";
+        echo $out="<tr>
+        <td>{$row['id']}</td>
+        <td>{$row['name']}</td>
+        <td><button class='edit'  data-id='{$row['id']}' data-name='{$row['name']}' >Edit</button></td>
+        </tr>";
 
     }
 
@@ -22,4 +26,8 @@ else{
     echo $out ="no record found";
 }
 // echo $out;
+
 ?>
+<!-- <input type='submit' value='edit' class=' btn btn-warning'> -->
+<!-- <input type="text" value='{[]}'> -->
+<button ></button>
